@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Calculator</title>
+</head>
+<body style="background-color:black;">
+    <div class="container text-center" style="color:white;" >
+        <h1 class="display-1 ">Calculator</h1>
+        <div class="row">
+            <div class="col-lg-11  mx-auto " style="padding:0 10px">
+                <div id="display1"><h1 class="mb-0 text-right pt-1 pr-3" ></h1></div>
+                <div id="display2"><h1 class="display-2 mb-0 text-right" >0</h1></div>
+            </div>  
+        </div>
+        <div class="row mx-auto mt-3 " >
+            <div class="col-lg-7  ml-auto px-0"> 
+                <div class="row">
+                        <div class="col-lg-2 bg-dark py-2 mb-1 ml-2 button" id="Deg" onclick=changeAngle(this.id) style="margin-right:auto"><h1 class="display-5">Deg</h1></div>
+                        <div class="col-lg-2 bg-dark py-2 mb-1 mr-5 button" id="permil" onclick =sciCal(this.id)><h1 class="display-5">&permil;</h1></div>
+                </div>
+                <div class="row">
+                        <div class="col-lg bg-dark py-2 mb-1 ml-2 mr-1 button" id="pi" onclick =sciCal(this.id)><h1 class="display-5">&pi;</h1></div>
+                        <div class="col-lg bg-dark py-2 mb-1 mr-1 button" id="sin" onclick =sciCal(this.id)><h1 class="display-5">sin</h1></div>
+                        <div class="col-lg bg-dark py-2 mb-1 mr-1 button" id="cos" onclick =sciCal(this.id)><h1 class="display-5">cos</h1></div>
+                        <div class="col-lg bg-dark py-2 mb-1 mr-1 button" id="tan" onclick =sciCal(this.id)><h1 class="display-5">tan</h1></div>
+                        <div class="col-lg bg-dark py-2 mb-1 mr-5 button" id="plusminus" onclick =sciCal(this.id)><h1 class="display-5">&plusmn;</h1></div>
+                </div>
+                <div class="row">
+                        <div class="col-lg bg-dark py-2 mb-1 ml-2 mr-1 button"  id="sqr" onclick =sciCal(this.id)><h1 class="display-5">x<sup>2</sup></h1></div>
+                        <div class="col-lg bg-dark py-2 mb-1 mr-1 button" id="asin" onclick =sciCal(this.id)><h1 class="display-5">sin<sup>-1</sup></h1></div>
+                        <div class="col-lg bg-dark py-2 mb-1 mr-1 button" id="acos" onclick =sciCal(this.id)><h1 class="display-5">cos<sup>-1</sup></h1></div>
+                        <div class="col-lg bg-dark py-2 mb-1 mr-1 button" id="atan" onclick =sciCal(this.id)><h1 class="display-5">tan<sup>-1</sup></h1></div>
+                        <div class="col-lg bg-dark py-2 mb-1 mr-5 button" id="sqrt" onclick =sciCal(this.id)><h1 class="display-5">&Sqrt;</h1></div>
+                </div>
+                <div class="row">
+                        <div class="col-lg bg-dark  py-2 mb-1 ml-2 mr-1 button" id="^" onclick=inputOpt(this.id)><h1 class="display-5">x<sup>y</sup></h1></div>
+                        <div class="col-lg bg-dark py-2 mb-1 mr-1 button" id="powerten" onclick =sciCal(this.id)><h1 class="display-5">10<sup>x</sup></h1></div>
+                        <div class="col-lg bg-dark py-2 mb-1 mr-1 button" id="powerexpo" onclick =sciCal(this.id)><h1 class="display-5">e<sup>x</sup></h1></div>
+                        <div class="col-lg bg-dark py-2 mb-1 mr-1 button" id="Mod" onclick=inputOpt(this.id)><h1 class="display-5">Mod</h1></div>
+                        <div class="col-lg bg-dark py-2 mb-1 mr-5 button" id="percnt" onclick =sciCal(this.id)><h1 class="display-5">&percnt;</h1></div>
+                </div>
+                <div class="row">
+                        <div class="col-lg bg-dark py-2 mb-1 ml-2 mr-1 button" id="yroot" onclick=inputOpt(this.id)><h1 class="display-5"><sup>y</sup>&Sqrt;x</h1></div>
+                        <div class="col-lg bg-dark py-2 mb-1 mr-1 button" id="log" onclick =sciCal(this.id)><h1 class="display-5">log</h1></div>
+                        <div class="col-lg bg-dark py-2 mb-1 mr-1 button" id="ln" onclick =sciCal(this.id)><h1 class="display-5">ln</h1></div>
+                        <div class="col-lg bg-dark py-2 mb-1 mr-1 button" id="fact" onclick =sciCal(this.id)><h1 class="display-5">n!</h1></div>
+                        <div class="col-lg bg-dark py-2 mb-1 mr-5 button" id="inverse" onclick =sciCal(this.id)><h1 class="display-5">1/x</h1></div>
+                </div>
+                
+            </div>
+            <div class="col-lg-4  mr-auto px-0" >
+                <div class="row mx-0">
+                    
+                    <div class="bg-dark py-2 mr-2 col-lg button" onclick=clearDisplay()><h1 class="display-5" >CE</h1></div>
+                    <div class="bg-dark py-2 mr-2 col-lg button" onclick=clearBoth()><h1 class="display-5" >C</h1></div>
+                    <div class="bg-dark py-2 mr-2 col-lg button" onclick=backSpace()><h1 class="display-5">&lArr;</h1></div>
+                    <div class="bg-dark py-2 col-lg button" id="÷" onclick=inputOpt(this.id)><h1 class="display-5">&divide;</h1></div>
+                </div>
+                <div class="row mx-0 mt-1">
+                        <div class="bg-dark py-2 mr-2 col-lg button" id="7" onclick=inputNum(this.id)><h1 class="display-5">7</h1></div>
+                        <div class="bg-dark py-2 mr-2 col-lg button" id="8" onclick=inputNum(this.id)><h1 class="display-5">8</h1></div>
+                        <div class="bg-dark py-2 mr-2 col-lg button" id="9" onclick=inputNum(this.id)><h1 class="display-5">9</h1></div>
+                        <div class="bg-dark py-2  col-lg button" id="*" onclick=inputOpt(this.id)><h1 class="display-5">&times;</h1></div>
+                    </div>
+                    <div class="row mx-0 mt-1">
+                            <div class="bg-dark py-2 mr-2 col-lg button" id="4" onclick=inputNum(this.id)><h1 class="display-5">4</h1></div>
+                            <div class="bg-dark py-2 mr-2 col-lg button" id="5" onclick=inputNum(this.id)><h1 class="display-5">5</h1></div>
+                            <div class="bg-dark py-2 mr-2 col-lg button" id="6" onclick=inputNum(this.id)><h1 class="display-5">6</h1></div>
+                            <div class="bg-dark py-2  col-lg button" id="-" onclick=inputOpt(this.id)><h1 class="display-5">&minus;</h1></div>
+                        </div>
+                        <div class="row mx-0 mt-1">
+                                <div class="bg-dark py-2 mr-2 col-lg button" id="1" onclick=inputNum(this.id)><h1 class="display-5">1</h1></div>
+                                <div class="bg-dark py-2 mr-2 col-lg button" id="2" onclick=inputNum(this.id)><h1 class="display-5">2</h1></div>
+                                <div class="bg-dark py-2 mr-2 col-lg button" id="3" onclick=inputNum(this.id)><h1 class="display-5">3</h1></div>
+                                <div class="bg-dark py-2 col-lg button" id="+" onclick=inputOpt(this.id)><h1 class="display-5">&plus;</h1></div>
+                            </div>
+                            <div class="row mx-0 mt-1">
+                                    <div class="bg-dark py-2 mr-2 col-lg-6 button" id="0" onclick=inputNum(this.id)><h1 class="display-5">0</h1></div>
+                                    <div class="bg-dark py-2 mr-2 col-lg button" id="." onclick=inputNum(this.id)><h1 class="display-5">&dot;</h1></div>
+                                    <div class="bg-success py-2  col-lg bg-success button" id="=" onclick=inputOpt(this.id) ><h1 class="display-5 bg-success">=</h1></div>
+                                </div>
+            </div>   
+        </div>
+        
+    </div>
+    <footer class="text-center display-5" style="color:white;">Design By ONIKOYI, RIDWAN 140806040  &copy; 2018</footer>
+    <script src="script.js"></script>
+</body>
+</html>

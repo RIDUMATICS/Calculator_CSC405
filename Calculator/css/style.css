@@ -1,0 +1,22 @@
+#display1, #display2{
+    width: 100%;
+    background-color: rgb(54, 54, 54); 
+ }
+#display1{
+   height: 30px; 
+    
+}
+#display1 h1{
+    font-size: 2em;
+    color: darkgrey;
+
+}
+
+#display2{
+    height: 100px; 
+ }
+.button{
+    cursor: pointer;
+}
+
+ 
